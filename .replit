@@ -38,5 +38,6 @@ localPort = 45541
 externalPort = 3000
 
 [deployment]
-deploymentTarget = "vm"
-run = ["php", "-S", "0.0.0.0:5000", "-t", "."]
+deploymentTarget = "autoscale"
+run = ["npm", "start"]
+build = ["npm", "run", "build"]
