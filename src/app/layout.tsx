@@ -88,7 +88,9 @@ export default function RootLayout({
           {children}
         </div>
         
-        {/* JavaScript Libraries */}
+        {/* JavaScript Libraries - Load in correct order */}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="/plugin/pluginson3step.js"></script>
         <script src="/plugin/bootstrap.min.js"></script>
         <script src="/plugin/bootstrap-datepicker.min.js"></script>
