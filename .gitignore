@@ -1,0 +1,25 @@
+# PHP
+*.log
+.env
+.env.local
+.env.production
+vendor/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache
+cache/
+temp/
