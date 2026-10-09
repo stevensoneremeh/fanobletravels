@@ -7,17 +7,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en">
-      <body>
-        <div className="preloader-white" aria-hidden="true">
-          <div className="mainpreloader">
-            <div className="loader-ring" />
-            <div className="loader-label">Preparing your journey</div>
-          </div>
-        </div>
-        {children}
-      </body>
-    </html>
-  )
+  return <html lang="en"><body>
+    <div className="preloader-white" aria-hidden="true"><div className="mainpreloader"><div className="loader-ring" /><div className="loader-label">Preparing your journey</div></div></div>
+    {children}
+  </body></html>
 }
