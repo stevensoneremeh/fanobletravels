@@ -3,5 +3,10 @@
   "/page": "app/page.js",
   "/tours/israel/page": "app/tours/israel/page.js",
   "/medical-tourism/page": "app/medical-tourism/page.js",
-  "/fairs/china/page": "app/fairs/china/page.js"
+  "/fairs/china/page": "app/fairs/china/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/tours/rome/page": "app/tours/rome/page.js",
+  "/tours/jordan/page": "app/tours/jordan/page.js"
 }
