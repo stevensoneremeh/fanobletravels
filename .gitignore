@@ -21,5 +21,6 @@ Thumbs.db
 *.swo
 
 # Cache
+.next/
 cache/
 temp/

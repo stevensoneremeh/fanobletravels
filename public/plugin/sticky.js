@@ -22,7 +22,7 @@ var sticky = (function(){
 		$window 	       = jQuery(window);
 		$stickyNav             = $(elem);
 		$stickyParent          = $stickyNav.parent();
-		stickyPos              = $stickyNav.offset().top  > 0 && top != 272 ;
+		stickyPos              = $stickyNav.offset().top > 0;
 		
 		_eventHandlers();
 	}
