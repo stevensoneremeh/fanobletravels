@@ -1,50 +1,6 @@
-import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactForm from '@/components/ContactForm'
+import PageHero from '@/components/PageHero'
 
-export default function Contact() {
-  return (
-    <>
-      <Header />
-      
-      {/* Subheader */}
-      <section id="subheader">
-        <div className="container-fluid m-5-hor">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="big-heading">CONTACT US</h1>
-              <p>Get in touch with our travel experts</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <div style={{backgroundColor: 'gray', minHeight: '80vh'}}>
-        <div className="container-fluid m-5-hor">
-          <div className="row">
-            <div className="col-md-8">
-              <ContactForm />
-            </div>
-            <div className="col-md-4">
-              <div className="wrap-subfooter" style={{color: 'white', padding: '20px'}}>
-                <h4>Contact Information</h4>
-                <div className="subfooter-content-right" style={{marginBottom: '15px'}}>
-                  89A, Terrace Wing, TBS Complex Race Course, Lagos Island, Lagos.
-                </div>
-                <div className="subfooter-content-right" style={{marginBottom: '15px'}}>
-                  Phone: (+234) 8184414599
-                </div>
-                <div className="subfooter-content-right">
-                  <a href="mailto:info@fanobletravels.com">Email: info@fanobletravels.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <Footer />
-    </>
-  )
-}
+export default function Contact() { return <><Header /><main><PageHero eyebrow="Start a conversation" title="Let’s plan something unforgettable" description="Share your destination, dates, and travel dreams. Our consultants will shape the next step with you." image="/img/slider/slider-3.jpg" /><section className="content-section contact-section"><div className="container-fluid contact-grid"><div><p className="eyebrow">Contact information</p><h2>Travel plans start with a hello.</h2><p>89A, Terrace Wing, TBS Complex Race Course, Lagos Island, Lagos.</p><p><a href="tel:+2348184414599">(+234) 818 441 4599</a><br /><a href="mailto:info@fanobletravels.com">info@fanobletravels.com</a></p><div className="contact-note">Monday – Friday<br />8:00 AM – 5:00 PM WAT</div></div><div className="contact-form-card"><ContactForm /></div></div></section></main><Footer /></> }
