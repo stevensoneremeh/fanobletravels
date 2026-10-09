@@ -5,7 +5,7 @@ type AppRoutes = "/" | "/about" | "/contact" | "/fairs/china" | "/medical-touris
 type AppRouteHandlerRoutes = "/api/contact"
 type PageRoutes = never
 type LayoutRoutes = "/"
-type RedirectRoutes = never
+type RedirectRoutes = "/" | "/about" | "/contact" | "/destination" | "/fairs/china" | "/fairs/india" | "/fairs/professional" | "/fairs/turkey" | "/medical-tourism" | "/medical-tourism/cambodia" | "/medical-tourism/europe" | "/projects/detail-2" | "/services/1" | "/tours/egypt" | "/tours/greece" | "/tours/israel" | "/tours/jordan" | "/tours/rome" | "/tours/turkey" | "/works/carousel"
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes | AppRouteHandlerRoutes
 
@@ -15,11 +15,23 @@ interface ParamMap {
   "/about": {}
   "/api/contact": {}
   "/contact": {}
+  "/destination": {}
   "/fairs/china": {}
+  "/fairs/india": {}
+  "/fairs/professional": {}
+  "/fairs/turkey": {}
   "/medical-tourism": {}
+  "/medical-tourism/cambodia": {}
+  "/medical-tourism/europe": {}
+  "/projects/detail-2": {}
+  "/services/1": {}
+  "/tours/egypt": {}
+  "/tours/greece": {}
   "/tours/israel": {}
   "/tours/jordan": {}
   "/tours/rome": {}
+  "/tours/turkey": {}
+  "/works/carousel": {}
 }
 
 
