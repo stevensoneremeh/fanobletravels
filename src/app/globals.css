@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
+/* Keep desktop dropdowns open across the full hover gap and make every destination easy to select. */
+@media (min-width: 821px) {
+  .menu-init li.has-menu { padding-bottom: 12px; margin-bottom: -12px; }
+  .menu-init li ul { top: calc(100% + 12px); min-width: 248px; padding: 14px; }
+  .menu-init li ul::before { content: ''; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+  .menu-init li ul a { display: block; padding: 13px 14px; border-radius: 8px; }
+  .menu-init li ul a:hover, .menu-init li ul a:focus-visible { background: #eef4f1; color: var(--teal); outline: none; }
+}
+@media (max-width: 820px) {
+  .menu-init nav>ul>li { width: 100%; }
+  .menu-init li ul a { min-height: 44px; display: flex; align-items: center; }
+}
+
 /* Navigation and media safeguards: keep every destination reachable on touch and keyboard. */
 @media (hover: hover) and (pointer: fine){.menu-init li.has-menu:hover>ul{display:grid}.menu-init li.has-menu:hover .submenu-trigger{color:var(--teal)}}
 @media (max-width: 820px){.container-fluid,.container{width:min(100% - 32px,680px)}.utility-note{display:none}.nav-inner{min-height:72px}.navbar-brand img{width:96px}.navbar-toggle{display:inline-flex;align-items:center;gap:9px}.menu-init{display:none;width:100%;padding:12px 0 20px}.menu-init.is-open{display:block}.menu-init nav>ul{display:grid;gap:4px}.menu-init nav>ul>li>a,.submenu-trigger{display:flex;width:100%;justify-content:space-between;padding:14px 12px;border-radius:10px}.menu-init nav>ul>li>a:hover,.submenu-trigger:hover,.submenu-trigger:focus-visible{background:#eef4f1}.menu-init li ul{position:static;min-width:0;margin:0 0 4px;padding:4px 8px;background:#f2f6f3;border:0;box-shadow:none;border-radius:10px}.menu-init li ul a{display:block;padding:11px 12px} .legacy-highlights{display:grid;gap:14px}.legacy-highlights .info-card{display:grid;gap:6px}.legacy-highlights .info-card strong{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;color:var(--ink)}.nav-cta{margin-top:8px;justify-content:center!important}.page-hero{min-height:560px;background-position:center}.page-hero-inner{padding:72px 0}.page-hero-copy{max-width:680px}.page-hero h1{font-size:clamp(2.7rem,9vw,4.8rem)}}

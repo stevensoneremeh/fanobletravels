@@ -1,1 +1,166 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[],"fallback":[]},"redirects":[{"source":"/:path+/","destination":"/:path+","permanent":true,"internal":true,"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"}],"headers":[{"source":"/(.*)","headers":[{"key":"X-Frame-Options","value":"SAMEORIGIN"}],"regex":"^(?:\\/(.*))(?:\\/)?$"}]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ],
+      "regex": "^(?:/(.*))(?:/)?$"
+    }
+  ],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/destination",
+      "regex": "^/destination(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/destination(?:/)?$"
+    },
+    {
+      "page": "/fairs/china",
+      "regex": "^/fairs/china(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fairs/china(?:/)?$"
+    },
+    {
+      "page": "/fairs/india",
+      "regex": "^/fairs/india(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fairs/india(?:/)?$"
+    },
+    {
+      "page": "/fairs/professional",
+      "regex": "^/fairs/professional(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fairs/professional(?:/)?$"
+    },
+    {
+      "page": "/fairs/turkey",
+      "regex": "^/fairs/turkey(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fairs/turkey(?:/)?$"
+    },
+    {
+      "page": "/medical-tourism",
+      "regex": "^/medical\\-tourism(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/medical\\-tourism(?:/)?$"
+    },
+    {
+      "page": "/projects/detail-2",
+      "regex": "^/projects/detail\\-2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/projects/detail\\-2(?:/)?$"
+    },
+    {
+      "page": "/services/1",
+      "regex": "^/services/1(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/1(?:/)?$"
+    },
+    {
+      "page": "/tours/egypt",
+      "regex": "^/tours/egypt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tours/egypt(?:/)?$"
+    },
+    {
+      "page": "/tours/greece",
+      "regex": "^/tours/greece(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tours/greece(?:/)?$"
+    },
+    {
+      "page": "/tours/israel",
+      "regex": "^/tours/israel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tours/israel(?:/)?$"
+    },
+    {
+      "page": "/tours/jordan",
+      "regex": "^/tours/jordan(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tours/jordan(?:/)?$"
+    },
+    {
+      "page": "/tours/rome",
+      "regex": "^/tours/rome(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tours/rome(?:/)?$"
+    },
+    {
+      "page": "/tours/turkey",
+      "regex": "^/tours/turkey(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tours/turkey(?:/)?$"
+    },
+    {
+      "page": "/works/carousel",
+      "regex": "^/works/carousel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/works/carousel(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
