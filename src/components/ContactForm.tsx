@@ -46,8 +46,10 @@ export default function ContactForm() {
   }
 
   return (
-    <div style={{padding: '20px', backgroundColor: 'white', borderRadius: '8px', margin: '20px'}}>
-      <h3>Contact Us</h3>
+    <div className="contact-card">
+      <span className="eyebrow">Start a conversation</span>
+      <h3>Tell us where you want to go</h3>
+      <p className="contact-intro">Share a few details and our travel designers will shape the right next step for you.</p>
       <form onSubmit={handleSubmit}>
         <div className="form-group" style={{marginBottom: '15px'}}>
           <label htmlFor="name">Name</label>

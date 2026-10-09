@@ -20,29 +20,21 @@ export default function Contact() {
         </div>
       </section>
       
-      <div style={{backgroundColor: 'gray', minHeight: '80vh'}}>
-        <div className="container-fluid m-5-hor">
-          <div className="row">
-            <div className="col-md-8">
-              <ContactForm />
-            </div>
-            <div className="col-md-4">
-              <div className="wrap-subfooter" style={{color: 'white', padding: '20px'}}>
-                <h4>Contact Information</h4>
-                <div className="subfooter-content-right" style={{marginBottom: '15px'}}>
-                  89A, Terrace Wing, TBS Complex Race Course, Lagos Island, Lagos.
-                </div>
-                <div className="subfooter-content-right" style={{marginBottom: '15px'}}>
-                  Phone: (+234) 8184414599
-                </div>
-                <div className="subfooter-content-right">
-                  <a href="mailto:info@fanobletravels.com">Email: info@fanobletravels.com</a>
-                </div>
-              </div>
-            </div>
+      <main className="contact-page">
+        <div className="container-fluid">
+          <div className="contact-layout">
+            <ContactForm />
+            <aside className="contact-aside">
+              <span className="eyebrow">Fanoble concierge</span>
+              <h2>Consider this your first step.</h2>
+              <p>From a quiet escape to a meaningful pilgrimage, we make the details feel effortless and the journey deeply personal.</p>
+              <div className="contact-detail"><strong>Visit us</strong><span>89A Terrace Wing, TBS Complex<br />Race Course, Lagos Island</span></div>
+              <div className="contact-detail"><strong>Call</strong><a href="tel:+2348184414599">(+234) 818 441 4599</a></div>
+              <div className="contact-detail"><strong>Email</strong><a href="mailto:info@fanobletravels.com">info@fanobletravels.com</a></div>
+            </aside>
           </div>
         </div>
-      </div>
+      </main>
       
       <Footer />
     </>
