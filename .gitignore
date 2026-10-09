@@ -23,3 +23,10 @@ Thumbs.db
 # Cache
 cache/
 temp/
+# Node / Next.js
+node_modules/
+.next/
+out/
+
+# Deployment platforms
+.vercel

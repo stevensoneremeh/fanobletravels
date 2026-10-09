@@ -9,7 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'standalone',
   // Enable for Replit proxy environment
   allowedDevOrigins: ['127.0.0.1', 'localhost', '*.replit.dev'],
   async headers() {
