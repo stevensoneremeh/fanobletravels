@@ -1,46 +1,25 @@
-import React from 'react'
+'use client'
+
 import Link from 'next/link'
+import { useState } from 'react'
+
+const religious = [['Israel Tours', '/tours/israel'], ['Rome Tours', '/tours/rome'], ['Greece Tours', '/tours/greece'], ['Turkey Tours', '/tours/turkey'], ['Egypt Tours', '/tours/egypt'], ['Jordan Tours', '/tours/jordan']]
+const fairs = [['China Fairs', '/fairs/china'], ['Turkey Fairs', '/fairs/turkey'], ['India Fairs', '/fairs/india'], ['Professional Fairs', '/fairs/professional']]
 
 export default function Header() {
-  return (
-    <header className="init">
-      <div className="container-fluid m-5-hor">
-        <div className="row">
-          <div className="subnav">
-            <div className="col-md-8">
-              <div className="menu-center">
-                <span>FANOBLE TRAVELS AND TOURS NIG. LTD.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="navbar-default-white">
-        <div className="container-fluid m-5-hor">
-          <div className="row">
-            <button className="navbar-toggle" type="button" aria-label="Open navigation menu">
-              <span className="icon icon-bar" />
-              <span className="icon icon-bar" />
-              <span className="icon icon-bar" />
-              <span>MENU</span>
-            </button>
-            <Link className="navbar-brand white" href="/" aria-label="Fanoble Travels home">
-              <img alt="Fanoble Travels and Tours" src="/img/logo.png" />
-            </Link>
-            <div className="white menu-init" id="main-menu">
-              <nav id="menu-center" aria-label="Main navigation">
-                <ul>
-                  <li><Link className="actived" href="/">HOME</Link></li>
-                  <li><a href="#religious-tours">RELIGIOUS TOURISM <i className="fa fa-angle-down" /></a><ul><li><Link href="/tours/israel">ISRAEL TOURS</Link></li><li><Link href="/tours/rome">ROME TOURS</Link></li><li><Link href="/tours/greece">GREECE TOURS</Link></li><li><Link href="/tours/turkey">TURKEY TOURS</Link></li><li><Link href="/tours/egypt">EGYPT TOURS</Link></li><li><Link href="/tours/jordan">JORDAN TOURS</Link></li></ul></li>
-                  <li><Link href="/medical-tourism">MEDICAL TOURISM</Link></li>
-                  <li><a href="#trade-fairs">INTERNATIONAL TRADE FAIRS <i className="fa fa-angle-down" /></a><ul><li><Link href="/fairs/china">CHINA FAIRS</Link></li><li><Link href="/fairs/turkey">TURKEY FAIRS</Link></li><li><Link href="/fairs/india">INDIA FAIRS</Link></li><li><Link href="/fairs/professional">PROFESSIONAL FAIRS</Link></li></ul></li>
-                  <li><Link href="/about">ABOUT US</Link></li><li><Link href="/contact">CONTACT US</Link></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  )
+  const [open, setOpen] = useState(false)
+  return <header className="site-header">
+    <div className="utility-bar"><div className="container-fluid"><span>FANOBLE TRAVELS & TOURS NIG. LTD.</span><span className="utility-note">Curating journeys from Lagos to the world</span></div></div>
+    <div className="navbar-default-white"><div className="container-fluid nav-inner">
+      <Link className="navbar-brand" href="/" aria-label="Fanoble Travels home"><img alt="Fanoble Travels and Tours" src="/img/logo.png" /></Link>
+      <button className="navbar-toggle" type="button" aria-expanded={open} aria-controls="main-menu" onClick={() => setOpen(!open)}><span className="menu-bars" aria-hidden="true"><i /><i /><i /></span><span>{open ? 'CLOSE' : 'MENU'}</span></button>
+      <div className={`menu-init ${open ? 'is-open' : ''}`} id="main-menu"><nav aria-label="Main navigation"><ul>
+        <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
+        <li className="has-menu"><span>Religious tourism</span><ul>{religious.map(([label, href]) => <li key={href}><Link href={href} onClick={() => setOpen(false)}>{label}</Link></li>)}</ul></li>
+        <li><Link href="/medical-tourism" onClick={() => setOpen(false)}>Medical tourism</Link></li>
+        <li className="has-menu"><span>International fairs</span><ul>{fairs.map(([label, href]) => <li key={href}><Link href={href} onClick={() => setOpen(false)}>{label}</Link></li>)}</ul></li>
+        <li><Link href="/about" onClick={() => setOpen(false)}>About us</Link></li><li><Link className="nav-cta" href="/contact" onClick={() => setOpen(false)}>Plan a journey <b>↗</b></Link></li>
+      </ul></nav></div>
+    </div></div>
+  </header>
 }
