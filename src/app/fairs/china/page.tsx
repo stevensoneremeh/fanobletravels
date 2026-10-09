@@ -1,4 +1,35 @@
+import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import PageHero from '@/components/PageHero'
-export default function ChinaFairs(){return <><Header/><main className="page-shell"><PageHero title="Meet the markets shaping tomorrow." description="Smart, well-supported travel to China’s leading trade fairs and business destinations."/><section className="section"><div className="container content-grid"><div><div className="eyebrow">International trade fairs</div><h2>Arrive ready to do business.</h2><p className="body-copy">From the Canton Fair to industry-specific exhibitions in Shanghai and beyond, we help you travel with the right schedule, documents and local support.</p><p className="body-copy">We coordinate flights, hotels, transfers and practical trip details for individuals, teams and first-time exhibitors.</p><a className="button" href="/contact">Discuss your fair visit →</a></div><img className="content-image" src="https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=1200&q=85" alt="Modern Shanghai skyline at dusk"/></div></section></main><Footer/></>}
+
+export default function ChinaFairs() {
+  return (
+    <>
+      <Header />
+      <section id="subheader">
+        <div className="container-fluid m-5-hor">
+          <div className="row">
+            <div className="col-md-12">
+              <h1 className="big-heading">CHINA INTERNATIONAL TRADE FAIRS</h1>
+              <p>Business opportunities in the world's largest market</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="dark-page">
+        <div className="container-fluid m-5-hor">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 className="big-heading">CHINA TRADE FAIR PACKAGES</h2>
+              <p style={{color: 'white'}}>
+                Join major international trade fairs in China including the Canton Fair, Shanghai exhibitions, and industry-specific trade shows. Network with global businesses and explore new market opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </>
+  )
+}
