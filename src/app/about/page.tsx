@@ -1,4 +1,40 @@
+import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import PageHero from '@/components/PageHero'
-export default function About(){return <><Header/><main className="page-shell"><PageHero title="Travel with a little more meaning." description="A trusted Lagos travel partner for journeys that connect people to places, purpose and possibility."/><section className="section"><div className="container content-grid"><img className="content-image" src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=85" alt="Friends enjoying a view on a journey"/><div><div className="eyebrow">Our story</div><h2>Experience matters. So does the way you get there.</h2><p className="body-copy">At Fanoble Travels and Tours Nigeria Limited, we make travel feel considered, comfortable and personal. From the first conversation to the moment you arrive home, our team brings local insight, international standards and genuine care to every itinerary.</p><p className="body-copy">Whether you are travelling for faith, health, business or discovery, we handle the moving parts so you can be present for the moments that matter.</p><a className="button" href="/contact">Meet your travel team →</a></div></div></section></main><Footer/></>}
+
+export default function About() {
+  return (
+    <>
+      <Header />
+      
+      <section id="subheader">
+        <div className="container-fluid m-5-hor">
+          <div className="row">
+            <div className="col-md-12">
+              <h1 className="big-heading">ABOUT US</h1>
+              <p>Learn more about Fanoble Travels and Tours</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="dark-page">
+        <div className="container-fluid m-5-hor">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 className="big-heading">About Fanoble Travels and Tours</h2>
+              <p style={{color: 'white'}}>
+                At Fanoble Travels and Tours Nigeria Limited, we are committed to providing exceptional and hassle-free travel experiences that are memorable, inspiring and connect you to the world. Our mission is to guide our clients on journeys through our well-tailored travel packages, for individuals, groups and professionals.
+              </p>
+              <p style={{color: 'white'}}>
+                We strive to deliver personalized, seamless, and enriching travel experiences, ensuring every journey with us is a step towards a memorable and fulfilling experience. As an IATA accredited travel agency, we maintain the highest standards of service and reliability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </>
+  )
+}

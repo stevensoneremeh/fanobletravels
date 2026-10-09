@@ -1,1 +1,0 @@
-export default function PageHero({title,description}:{title:string;description:string}){return <section className="page-hero"><div className="container"><div className="eyebrow">Fanoble journeys</div><h1>{title}</h1><p>{description}</p></div></section>}

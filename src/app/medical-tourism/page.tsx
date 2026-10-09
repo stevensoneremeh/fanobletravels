@@ -1,4 +1,40 @@
+import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import PageHero from '@/components/PageHero'
-export default function MedicalTourism(){return <><Header/><main className="page-shell"><PageHero title="Care without borders." description="Travel coordination for treatment, wellness and recovery with calm, discreet support throughout."/><section className="section"><div className="container content-grid"><img className="content-image" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85" alt="Healthcare professional speaking with a patient"/><div><div className="eyebrow">Medical tourism</div><h2>More clarity when it matters most.</h2><p className="body-copy">We connect clients with reputable international healthcare providers and help coordinate the journey around treatment: appointments, flights, accommodation, transfers and recovery time.</p><p className="body-copy">Every plan is handled with privacy, patience and clear communication, so you and your family can focus on wellbeing.</p><a className="button" href="/contact">Speak with a specialist →</a></div></div></section></main><Footer/></>}
+
+export default function MedicalTourism() {
+  return (
+    <>
+      <Header />
+      
+      <section id="subheader">
+        <div className="container-fluid m-5-hor">
+          <div className="row">
+            <div className="col-md-12">
+              <h1 className="big-heading">MEDICAL TOURISM</h1>
+              <p>World-class healthcare with travel packages</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="dark-page">
+        <div className="container-fluid m-5-hor">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 className="big-heading">Medical Tourism Services</h2>
+              <p style={{color: 'white'}}>
+                Fanoble Travels and Tours offers comprehensive medical tourism packages combining world-class healthcare with exceptional travel experiences. We partner with accredited medical facilities to provide quality healthcare services at affordable prices.
+              </p>
+              <p style={{color: 'white'}}>
+                Our medical tourism services include specialized treatments, wellness programs, and recovery packages in top-rated international medical destinations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </>
+  )
+}
