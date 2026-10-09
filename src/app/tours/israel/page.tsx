@@ -1,35 +1,4 @@
-import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-
-export default function IsraelTours() {
-  return (
-    <>
-      <Header />
-      <section id="subheader">
-        <div className="container-fluid m-5-hor">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="big-heading">ISRAEL RELIGIOUS TOURS</h1>
-              <p>Visit the Holy Land - Birthplace of Christianity</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="dark-page">
-        <div className="container-fluid m-5-hor">
-          <div className="row">
-            <div className="col-md-12">
-              <h2 className="big-heading">EXPLORE THE HOLY LAND</h2>
-              <p style={{color: 'white'}}>
-                Journey through the Holy Land with Fanoble Travels and Tours. Visit Jerusalem, Bethlehem, Nazareth, and other sacred sites where biblical history comes alive. Experience the birthplace of Jesus, walk where He walked, and discover the rich spiritual heritage of Israel.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <Footer />
-    </>
-  )
-}
+import PageHero from '@/components/PageHero'
+export default function IsraelTours(){return <><Header/><main className="page-shell"><PageHero title="Walk through living history." description="A thoughtful Holy Land journey through Jerusalem, Bethlehem, Nazareth and the places where faith comes alive."/><section className="section"><div className="container content-grid"><div><div className="eyebrow">Religious tourism</div><h2>The Holy Land, seen with fresh eyes.</h2><p className="body-copy">Go beyond a checklist of landmarks. Our guided Israel itineraries balance sacred sites, local stories, comfortable stays and enough breathing room to truly take it all in.</p><p className="body-copy">We coordinate flights, transfers, accommodation, expert guides and group support for a smooth, meaningful experience from Lagos and back.</p><a className="button" href="/contact">Ask about an itinerary →</a></div><img className="content-image" src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85" alt="Historic architecture in a sacred city"/></div></section></main><Footer/></>}

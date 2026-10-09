@@ -1,35 +1,90 @@
 {
   "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/app/_not-found/page-7065e012477547f3.js"
+    ],
+    "/api/contact/route": [
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/app/api/contact/route-d7f8e72c89ff0978.js"
+    ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/css/eb3350e8cf2bebe3.css",
+      "static/chunks/app/layout-e51ce59b6ef90fe5.js"
     ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/about/page": [
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/about/page-d66a028be9c8c7a2.js"
     ],
-    "/tours/israel/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tours/israel/page.js"
+    "/contact/page": [
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/contact/page-a45c78491b4828db.js"
     ],
     "/fairs/china/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/fairs/china/page.js"
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/fairs/china/page-d66a028be9c8c7a2.js"
     ],
     "/medical-tourism/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/medical-tourism/page.js"
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/medical-tourism/page-d66a028be9c8c7a2.js"
     ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+    "/page": [
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/page-d66a028be9c8c7a2.js"
+    ],
+    "/tours/israel/page": [
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/tours/israel/page-d66a028be9c8c7a2.js"
+    ],
+    "/tours/jordan/page": [
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/tours/jordan/page-d66a028be9c8c7a2.js"
+    ],
+    "/tours/rome/page": [
+      "static/chunks/webpack-4e6bf084ac60582b.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-27fc46e3e6019575.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/tours/rome/page-d66a028be9c8c7a2.js"
     ]
   }
 }

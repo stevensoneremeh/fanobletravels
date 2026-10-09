@@ -1,35 +1,4 @@
-import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-
-export default function RomeTours() {
-  return (
-    <>
-      <Header />
-      <section id="subheader">
-        <div className="container-fluid m-5-hor">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="big-heading">ROME RELIGIOUS TOURS</h1>
-              <p>Discover Vatican City and Early Christian Sites</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="dark-page">
-        <div className="container-fluid m-5-hor">
-          <div className="row">
-            <div className="col-md-12">
-              <h2 className="big-heading">SPIRITUAL ROME EXPERIENCE</h2>
-              <p style={{color: 'white'}}>
-                Experience the heart of Christianity in Rome with visits to Vatican City, St. Peter's Basilica, the Sistine Chapel, and ancient Christian catacombs. Walk in the footsteps of early Christians and apostles.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <Footer />
-    </>
-  )
-}
+import PageHero from '@/components/PageHero'
+export default function RomeTours(){return <><Header/><main className="page-shell"><PageHero title="Rome, where every street tells a story." description="Experience Vatican City, St Peter’s Basilica and the living heart of early Christianity."/><section className="section"><div className="container content-grid"><img className="content-image" src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1200&q=85" alt="Rome cityscape and historic architecture"/><div><div className="eyebrow">Religious tourism</div><h2>Ancient faith. Modern wonder.</h2><p className="body-copy">Explore the Vatican Museums, Sistine Chapel, St Peter’s Basilica and the ancient catacombs with an itinerary that leaves space for the food, art and atmosphere of Rome.</p><a className="button" href="/contact">Explore Rome →</a></div></div></section></main><Footer/></>}
