@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-const religious = [['Israel Tours', '/tours/israel'], ['Rome Tours', '/tours/rome'], ['Greece Tours', '/tours/greece'], ['Turkey Tours', '/tours/turkey'], ['Egypt Tours', '/tours/egypt'], ['Jordan Tours', '/tours/jordan']]
-const fairs = [['China Fairs', '/fairs/china'], ['Turkey Fairs', '/fairs/turkey'], ['India Fairs', '/fairs/india'], ['Professional Fairs', '/fairs/professional']]
+const religious = [['Israel Tours', '/tours/israel'], ['Rome Tours', '/tours/rome'], ['Jordan Tours', '/tours/jordan']]
+const fairs = [['China Fairs', '/fairs/china']]
 
 export default function Header() {
   const [open, setOpen] = useState(false)
