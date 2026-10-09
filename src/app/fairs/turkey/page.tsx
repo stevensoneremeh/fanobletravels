@@ -1,0 +1,2 @@
+import LegacyDestinationPage from '@/components/LegacyDestinationPage'
+export default function TurkeyFairs() { return <LegacyDestinationPage eyebrow="International fairs" title="Turkey conference journeys" description="Pair professional development with the culture, energy and hospitality of Turkey." image="/img/bg-subheaderturkey1.jpg" intro="Professional travel with room to discover" highlights={['Conference registration support', 'Flights, stays and transfers', 'Cultural extensions']} /> }

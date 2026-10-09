@@ -1,0 +1,2 @@
+import LegacyDestinationPage from '@/components/LegacyDestinationPage'
+export default function ProfessionalFairs() { return <LegacyDestinationPage eyebrow="International fairs" title="Professional fairs, planned properly" description="Travel to conferences and exhibitions with a partner who understands the details behind successful business travel." image="/img/bg-subheaderprofessionalfairs.jpg" intro="A smoother route to your next event" highlights={['Personalised itineraries', 'Professional travel support', 'Flexible group planning']} /> }

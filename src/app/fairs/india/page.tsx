@@ -1,0 +1,2 @@
+import LegacyDestinationPage from '@/components/LegacyDestinationPage'
+export default function IndiaFairs() { return <LegacyDestinationPage eyebrow="International fairs" title="India fairs and exhibitions" description="Arrive prepared for the events that matter to your business, with every travel detail coordinated." image="/img/bg-subheaderindiafairs.jpg" intro="Make your next professional journey count" highlights={['Event and visa guidance', 'Comfortable accommodation', 'Reliable ground support']} /> }
