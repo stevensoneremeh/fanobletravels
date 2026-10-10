@@ -5,6 +5,7 @@ import SearchSection from '@/components/SearchSection'
 import Footer from '@/components/Footer'
 import LegacyContent from '@/components/LegacyContent'
 import HomeJourney from '@/components/HomeJourney'
+import MilestoneSection from '@/components/MilestoneSection'
 import './home-below-hero.css'
 
 export default function Home() {
@@ -18,6 +19,9 @@ export default function Home() {
       </div>
       
       <HomeJourney />
+      <div className="journey-benefits">
+        <MilestoneSection />
+      </div>
       <SearchSection />
       <section className="home-legacy" aria-label="More from Fanoble">
         <LegacyContent source="home" mode="home" />

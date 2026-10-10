@@ -7,7 +7,7 @@ const ts = require('typescript')
 
 // Execute the real TypeScript handlers with only the external email transport
 // replaced. These tests never send email or read real connector credentials.
-function loadApp({ recipient = 'inquiries@example.com', providerStatus = 200, providerBody = { id: 'email-test-id' } } = {}) {
+function loadApp({ recipient = 'inquiries@example.com', providerStatus = 200, providerBody } = {}) {
   const cache = new Map()
   const calls = []
   const fakeProcess = { env: { BOOKING_RECIPIENT_EMAIL: recipient } }
@@ -23,14 +23,11 @@ function loadApp({ recipient = 'inquiries@example.com', providerStatus = 200, pr
       if (name === 'next/server') return { NextResponse: { json: (data, init = {}) => new Response(JSON.stringify(data), {
         ...init, headers: { 'content-type': 'application/json', ...init.headers },
       }) } }
-      if (name === '@replit/connectors-sdk') return {
-        ReplitConnectors: class {
-          createProxyFetch(provider) {
-            return async (url, init) => {
-              calls.push({ provider, url, ...init, payload: JSON.parse(init.body) })
-              return new Response(JSON.stringify(providerBody), { status: providerStatus })
-            }
-          }
+      if (name === '@/utils/replitmail') return {
+        sendEmail: async (payload) => {
+          calls.push({ payload })
+          if (providerStatus !== 200) throw new Error('Mail provider rejected the request')
+          return providerBody || { accepted: [payload.to], rejected: [], messageId: 'email-test-id' }
         },
       }
       if (name.startsWith('@/')) return load(`src/${name.slice(2)}.ts`)
@@ -70,10 +67,9 @@ test('email recipient is configurable and never accepted from the traveller', as
   const response = await app.route.POST(request(inquiry({ recipient: 'attacker@example.com' })))
   assert.equal(response.status, 200)
   assert.equal((await response.json()).status, 'success')
-  assert.deepEqual(app.calls[0].payload.to, ['different-inbox@example.com'])
-  assert.equal(app.calls[0].payload.reply_to, 'traveller@example.com')
+  assert.equal(app.calls[0].payload.to, 'different-inbox@example.com')
+  assert.match(app.calls[0].payload.text, /traveller@example.com/)
   assert.match(app.calls[0].payload.text, /not a confirmed reservation/)
-  assert.equal(app.calls[0].headers['Idempotency-Key'], 'fanoble-booking/550e8400-e29b-41d4-a716-446655440000')
 })
 
 test('missing configuration fails explicitly without sending', async () => {
@@ -118,6 +114,26 @@ test('malformed provider acknowledgement cannot produce false success', async ()
   assert.equal((await app.route.POST(request(inquiry()))).status, 503)
 })
 
+test('identical retries reuse the acknowledgement rather than sending twice', async () => {
+  const app = loadApp()
+  assert.equal((await app.route.POST(request(inquiry()))).status, 200)
+  assert.equal((await app.route.POST(request(inquiry()))).status, 200)
+  assert.equal(app.calls.length, 1)
+})
+
+test('a rejected recipient cannot produce false success', async () => {
+  const app = loadApp({ providerBody: { accepted: [], rejected: ['inquiries@example.com'], messageId: 'email-test-id' } })
+  assert.equal((await app.route.POST(request(inquiry()))).status, 503)
+})
+
+test('a positive managed-relay acknowledgement counts as queued mail', async () => {
+  const app = loadApp({ providerBody: { accepted: ['relay@example.net'], rejected: [], messageId: 'relay-message-id' } })
+  const response = await app.route.POST(request(inquiry()))
+  assert.equal(response.status, 200)
+  assert.equal((await response.json()).id, 'relay-message-id')
+  assert.equal(app.calls[0].payload.to, 'inquiries@example.com')
+})
+
 test('cross-site submissions are rejected before email sending', async () => {
   const app = loadApp()
   assert.equal((await app.route.POST(request(inquiry(), { origin: 'https://another-site.example' }))).status, 403)
@@ -153,5 +169,5 @@ test('repeated inquiries are rate limited', async () => {
   for (let i = 0; i < 5; i++) assert.equal((await app.route.POST(request(inquiry()))).status, 200)
   const response = await app.route.POST(request(inquiry()))
   assert.equal(response.status, 429)
-  assert.equal(app.calls.length, 5)
+  assert.equal(app.calls.length, 1)
 })

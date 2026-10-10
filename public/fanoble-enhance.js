@@ -59,7 +59,7 @@
         const label = field.id ? booking.querySelector(`label[for="${field.id}"]`) : field.closest('.form-group')?.querySelector('label')
         return `${label?.textContent.trim() || field.name || 'Travel detail'}: ${field.value}`
       }).join('\n')
-      location.href = `/contact?subject=${encodeURIComponent('Travel inquiry')}&message=${encodeURIComponent(details)}`
+      location.href = `/?booking=1&details=${encodeURIComponent(details)}#travel-inquiry`
     })
 
     const contact = document.querySelector('#form-contact1')

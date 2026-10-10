@@ -1,1 +1,2 @@
 - [Legacy content fidelity](legacy-content-fidelity.md) — older HTML contains additional copy and imagery absent from the imported React pages.
+- [Managed mailer acknowledgements](managed-mailer.md) — SMTP relay acceptance is not an exact destination match or proof of inbox delivery.

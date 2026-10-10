@@ -47,6 +47,10 @@ export default function SearchSection() {
 
   useEffect(() => {
     let active = true
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('booking') === '1') {
+      setValues(current => ({ ...current, message: params.get('details')?.slice(0, 3000) || '' }))
+    }
     fetch('/api/booking')
       .then((response) => response.ok ? response.json() : null)
       .then((data: { recipient?: string | null } | null) => {
@@ -183,8 +187,8 @@ export default function SearchSection() {
                 </div>
               </div>
               <div className="inquiry-field">
-                <label htmlFor="inquiry-keyword">Journey type</label>
-                <input id="inquiry-keyword" placeholder="Pilgrimage, medical, trade fair…" value={values.keyword} onChange={(e) => update('keyword', e.target.value)} />
+                <label htmlFor="inquiry-keyword">Departure city / travel purpose</label>
+                <input id="inquiry-keyword" placeholder="e.g. Lagos · pilgrimage" value={values.keyword} onChange={(e) => update('keyword', e.target.value)} />
                 {errorFor('keyword') && <span id="error-keyword" className="inquiry-field__error">{errorFor('keyword')}</span>}
               </div>
               <div className="inquiry-field inquiry-field--wide">

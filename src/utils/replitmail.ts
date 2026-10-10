@@ -58,6 +58,7 @@ export async function sendEmail(message: SmtpMessage): Promise<{
     "https://connectors.replit.com/api/v2/mailer/send",
     {
       method: "POST",
+      signal: AbortSignal.timeout(15000),
       headers: {
         "Content-Type": "application/json",
         "X_REPLIT_TOKEN": authToken,

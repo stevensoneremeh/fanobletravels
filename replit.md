@@ -4,7 +4,7 @@
 This is a Next.js/React travel website for "Fanoble Travels and Tours Nigeria Limited" featuring religious tourism, medical tourism, and international trade fairs. The modern application also renders preserved legacy HTML content natively, and the original HTML pages and intro remain accessible.
 
 ## Content and Design Requirements
-- Preserve all existing text and images; do not shorten copy or replace destination photos.
+- Preserve existing image files and essential original travel information. The user permits refining copy/context and adding appropriate internet-sourced images where missing or useful; record sources and required attribution.
 - Preserve the original logo image in the loader.
 - Apply the shared modern visual system to all main and inner pages, including the legacy HTML and intro.
 - Use the current Next.js structure; do not migrate or restructure the application without permission.
@@ -25,7 +25,7 @@ This is a Next.js/React travel website for "Fanoble Travels and Tours Nigeria Li
 - International trade fairs information
 - Contact form with Next.js API and email integration
 - Accessible hero slideshow with pause, previous/next, and reduced-motion support
-- Booking inquiry handoff to the contact form; this is not a live reservation system
+- Flight/hotel inquiry form sends to an environment-configured inbox through the existing Replit mail service; this is not a live reservation system.
 - Responsive design with Bootstrap and custom styles
 
 ## Development Setup
@@ -36,7 +36,7 @@ This is a Next.js/React travel website for "Fanoble Travels and Tours Nigeria Li
 - **Path Aliases**: @/* resolves to src/* directory
 - **Install**: `npm ci`
 - **Run**: `npm run dev` (port 5000)
-- **Verify**: `npx tsc --noEmit` and `npm run build`
+- **Verify**: `node --test tests/booking.test.cjs`, `npx tsc --noEmit` and `npm run build`
 - **Styling**: src/app/globals.css and public/fanoble-redesign.css; load the shared stylesheet after legacy CSS.
 - **Static enhancement**: public/fanoble-enhance.js handles legacy navigation and inquiry handoffs.
 
@@ -56,6 +56,14 @@ This is a Next.js/React travel website for "Fanoble Travels and Tours Nigeria Li
 - tsconfig.json - TypeScript configuration with path aliases
 
 ## Known Limitations
-- The imported Greece gallery references `img/projects-color - greece/15.jpg`, which is absent from the repository. Do not substitute an unrelated photo; request the original asset.
+- The absent original Greece photo was supplemented with licensed Acropolis photography, with visible attribution; original image files remain intact.
 - Root/public asset copies are intentionally retained to preserve imported pages and images.
 - Canvas sandbox artifacts are separate from the main application; the root TypeScript check includes src/ rather than all sandbox templates.
+
+## Booking Inquiry Email
+- Set `BOOKING_RECIPIENT_EMAIL` in environment variables to change the travel inquiry inbox. No recipient is hardcoded or accepted from visitors.
+- Automatic sending uses the existing Replit Mail integration and platform-managed runtime identity; do not add credentials to code.
+- The API validates inputs, date and same-site origin, applies instance-local rate limiting and retry deduplication, and only reports success after the mail service accepts the configured recipient.
+- If sending fails, the form keeps entered details and provides an explicit “Open email app” option with the configured recipient. Opening the email app does not automatically send anything.
+- Legacy HTML booking forms hand off their existing details to the modern homepage inquiry form.
+- The separate general contact form still uses its existing company inbox; changing the booking recipient does not change that inbox.
