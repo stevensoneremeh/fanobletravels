@@ -135,6 +135,33 @@ function sectionAttributes(section: string): string {
   return section.slice(0, section.indexOf('>') + 1)
 }
 
+/** Keep each page's destination lists without repeating the shared footer. */
+function pageSpecificFooterSections(document: string, source: string): string[] {
+  const html = document.replace(/<!--[\s\S]*?-->/g, '')
+  const wrappers: string[] = []
+  const starts = /<div\b[^>]*class\s*=\s*["'][^"']*\bwrap-subfooter\b[^"']*["'][^>]*>/gi
+  let start: RegExpExecArray | null
+  while ((start = starts.exec(html))) {
+    const tokens = /<\/?div\b[^>]*>/gi
+    tokens.lastIndex = starts.lastIndex
+    let depth = 1
+    let token: RegExpExecArray | null
+    while ((token = tokens.exec(html))) {
+      depth += token[0].startsWith('</') ? -1 : 1
+      if (depth !== 0) continue
+      const block = html.slice(start.index, tokens.lastIndex)
+      const heading = block.match(/<h4\b[^>]*>([\s\S]*?)<\/h4>/i)?.[1]
+        .replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().toUpperCase()
+      if (heading && !['MISSION STATEMENT', 'CONTACT INFO'].includes(heading)) {
+        wrappers.push(sanitize(block, source))
+      }
+      break
+    }
+  }
+  if (!wrappers.length) return []
+  return [`<section class="legacy-page-details" aria-label="Additional travel information"><div class="container-fluid m-5-hor"><div class="legacy-page-details-grid">${wrappers.join('')}</div></div></section>`]
+}
+
 export function getLegacySections(key: LegacyPageKey, mode: LegacyContentMode): string[] {
   const source = sources[key]
   const filePath = path.join(process.cwd(), 'public', source)
@@ -146,5 +173,8 @@ export function getLegacySections(key: LegacyPageKey, mode: LegacyContentMode): 
     if (mode === 'main') return !/\bid\s*=\s*["']subheader[^"']*["']/i.test(open)
     return true
   })
-  return fragments.map(section => sanitize(section, source)).filter(Boolean)
+  return [
+    ...fragments.map(section => sanitize(section, source)).filter(Boolean),
+    ...pageSpecificFooterSections(original, source),
+  ]
 }

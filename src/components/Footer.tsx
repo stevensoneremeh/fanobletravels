@@ -43,6 +43,11 @@ export default function Footer() {
 
       {/* Footer */}
       <footer className="alt">
+        <div className="image-credits">
+          Additional photography: <a href="https://commons.wikimedia.org/wiki/File:Acropolis_Athens_in_2004.jpg" target="_blank" rel="noopener noreferrer">Harrieta171 / Wikimedia Commons</a>
+          {' '}(<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>; resized) and{' '}
+          <a href="https://www.pexels.com/photo/33337043/" target="_blank" rel="noopener noreferrer">Pexels</a>.
+        </div>
         <div className="container-fluid m-5-hor">
           <div className="row">
             <div className="col-md-6 text-left">
