@@ -28,12 +28,7 @@ jQuery( window ).on( "load", function() {
       // responsive part
       if ( jQuery( window )
           .width() < 1025 ) {}
-      // mobile icon
-      jQuery( ".navbar-toggle" )
-          .on( "click", function() {
-              menumobile.slideToggle(300)
-              navdefault.toggleClass( 'fullHeight' );
-          } );
+      // Mobile navigation is owned by fanoble-enhance.js.
   } );
   // end function
 

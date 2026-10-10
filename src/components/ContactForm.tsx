@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -8,11 +8,22 @@ export default function ContactForm() {
     subject: '',
     message: ''
   })
-  const [status, setStatus] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [statusMessage, setStatusMessage] = useState('')
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search)
+    const name = query.get('name')
+    const email = query.get('email')
+    const subject = query.get('subject')
+    const message = query.get('message')
+    if (name || email || subject || message) setFormData(current => ({...current, name: name || current.name, email: email || current.email, subject: subject || current.subject, message: message || current.message}))
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setStatus('Sending...')
+    if (status === 'sending') return
+    setStatus('sending')
+    setStatusMessage('Sending your message…')
 
     try {
       const formDataObj = new FormData()
@@ -27,102 +38,102 @@ export default function ContactForm() {
       })
 
       const result = await response.json()
-      if (result.status === 'success') {
-        setStatus('Message sent successfully!')
+      if (response.ok && result.status === 'success') {
+        setStatus('success')
+        setStatusMessage('Your message has been sent. We’ll be in touch soon.')
         setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
-        setStatus('Failed to send message. Please try again.')
+        setStatus('error')
+        setStatusMessage('We couldn’t send your message. Please try again.')
       }
-    } catch (error) {
-      setStatus('Error sending message. Please try again.')
+    } catch {
+      setStatus('error')
+      setStatusMessage('A connection issue stopped your message from sending. Check your connection and try again.')
     }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
+    setFormData(current => ({
+      ...current,
       [e.target.name]: e.target.value
-    })
+    }))
+    if (status === 'error') {
+      setStatus('idle')
+      setStatusMessage('')
+    }
   }
 
   return (
-    <div style={{padding: '20px', backgroundColor: 'white', borderRadius: '8px', margin: '20px'}}>
-      <h3>Contact Us</h3>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group" style={{marginBottom: '15px'}}>
+    <div className="contact-form-panel">
+      <h3 id="contact-form-title">Contact Us</h3>
+      <p className="contact-form-intro">Tell us where you’re headed. Our team will help with the next step.</p>
+      <form className="contact-form" onSubmit={handleSubmit} aria-labelledby="contact-form-title" aria-busy={status === 'sending'}>
+        <div className="contact-form-fields">
+        <div className="contact-form-field">
           <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
             name="name"
-            className="form-control"
+            className="contact-form-control"
             value={formData.name}
             onChange={handleChange}
+            autoComplete="name"
             required
-            style={{width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px'}}
           />
         </div>
         
-        <div className="form-group" style={{marginBottom: '15px'}}>
+        <div className="contact-form-field">
           <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             name="email"
-            className="form-control"
+            className="contact-form-control"
             value={formData.email}
             onChange={handleChange}
+            autoComplete="email"
             required
-            style={{width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px'}}
           />
         </div>
         
-        <div className="form-group" style={{marginBottom: '15px'}}>
+        <div className="contact-form-field">
           <label htmlFor="subject">Subject</label>
           <input
             type="text"
             id="subject"
             name="subject"
-            className="form-control"
+            className="contact-form-control"
             value={formData.subject}
             onChange={handleChange}
             required
-            style={{width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px'}}
           />
         </div>
         
-        <div className="form-group" style={{marginBottom: '15px'}}>
+        <div className="contact-form-field contact-form-field-wide">
           <label htmlFor="message">Message</label>
           <textarea
             id="message"
             name="message"
-            className="form-control"
-            rows={5}
+            className="contact-form-control contact-form-message"
+            rows={6}
             value={formData.message}
             onChange={handleChange}
             required
-            style={{width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', resize: 'vertical'}}
           />
         </div>
-        
+        </div>
         <button
           type="submit"
-          className="btn"
-          style={{
-            backgroundColor: '#fc9f1c',
-            color: 'white',
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
-          }}
+          className="contact-form-submit"
+          disabled={status === 'sending'}
         >
-          Send Message
+          {status === 'sending' ? 'Sending message…' : 'Send Message'}
         </button>
-        
-        {status && (
-          <div style={{marginTop: '10px', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '4px'}}>
-            {status}
+        {status !== 'idle' && (
+          <div className={`contact-form-status is-${status}`} role={status === 'error' ? 'alert' : 'status'} aria-live={status === 'error' ? 'assertive' : 'polite'} aria-atomic="true">
+            <span className="contact-form-status-mark" aria-hidden="true">{status === 'success' ? '✓' : status === 'error' ? '!' : '·'}</span>
+            <span>{statusMessage}</span>
           </div>
         )}
       </form>

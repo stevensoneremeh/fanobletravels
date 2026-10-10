@@ -30,3 +30,4 @@ out/
 
 # Deployment platforms
 .vercel
+*.tsbuildinfo

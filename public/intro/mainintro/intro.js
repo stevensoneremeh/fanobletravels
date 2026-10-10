@@ -153,7 +153,6 @@ $(function() {
 });
 // end function
 });
-// HTML document is loaded end
 
 
 

@@ -3,14 +3,11 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
   },
   // Enable for Replit proxy environment
-  allowedDevOrigins: ['127.0.0.1', 'localhost', '*.replit.dev'],
+  allowedDevOrigins: ['127.0.0.1', 'localhost', '*.replit.dev', '*.kirk.replit.dev'],
   async headers() {
     return [
       {

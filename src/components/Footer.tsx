@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 
 export default function Footer() {
   return (
@@ -20,14 +20,12 @@ export default function Footer() {
             </div>
             <div className="col-md-3 col-md-offset-1">
               <div className="wrap-subfooter">
-                <h4 style={{whiteSpace: 'nowrap', color: '#f19305', fontSize: 'xx-large'}}>
-                  <p>KEY PLACES YOU WOULD VISIT IN ISRAEL</p>
-                </h4>
+                <h4 style={{whiteSpace: 'nowrap', color: '#f19305', fontSize: 'xx-large'}}>KEY PLACES YOU WOULD VISIT IN ISRAEL</h4>
                 <div className="tag-country">
-                  <a href="#" className="list-country">BIRTH PLACE OF JESUS</a>
-                  <a href="#" className="list-country">JERUSALEM:THE HOLY CITY</a>
-                  <a href="#" className="list-country">BAPTISMAL PLACE OF JESUS</a>
-                  <a href="#" className="list-country">THE SYNAGOGUE</a>
+                  <a href="/tours/israel" className="list-country">BIRTH PLACE OF JESUS</a>
+                  <a href="/tours/israel" className="list-country">JERUSALEM:THE HOLY CITY</a>
+                  <a href="/tours/israel" className="list-country">BAPTISMAL PLACE OF JESUS</a>
+                  <a href="/tours/israel" className="list-country">THE SYNAGOGUE</a>
                 </div>
               </div>  
             </div>
@@ -35,8 +33,8 @@ export default function Footer() {
               <div className="wrap-subfooter">
                 <h4>Contact Info</h4>
                 <div className="subfooter-content-right">89A, Terrace Wing, TBS Complex Race Course, Lagos Island, Lagos.</div>
-                <div className="subfooter-content-right">Phone: (+234) 8184414599</div>
-                <div className="subfooter-content-right"><a href="#">Email: info@fanobletravels.com</a></div>
+                <div className="subfooter-content-right"><a href="tel:+2348184414599">Phone: (+234) 8184414599</a></div>
+                <div className="subfooter-content-right"><a href="mailto:info@fanobletravels.com">Email: info@fanobletravels.com</a></div>
               </div>
             </div>
           </div>
@@ -52,11 +50,11 @@ export default function Footer() {
             </div>
             <div className="col-md-6 text-right">
               <div className="social-icons-subnav">
-                <a href="#"><span className="ti-facebook"></span></a>
-                <a href="#"><span className="ti-dribbble"></span></a>
-                <a href="#"><span className="ti-twitter"></span></a>
-                <a href="#"><span className="ti-instagram"></span></a>
-                <a href="#"><span className="ti-linkedin"></span></a>
+                <a href="/contact" aria-label="Contact Fanoble Travels"><span className="ti-facebook"></span></a>
+                <a href="/contact" aria-label="Contact Fanoble Travels"><span className="ti-dribbble"></span></a>
+                <a href="/contact" aria-label="Contact Fanoble Travels"><span className="ti-twitter"></span></a>
+                <a href="/contact" aria-label="Contact Fanoble Travels"><span className="ti-instagram"></span></a>
+                <a href="/contact" aria-label="Contact Fanoble Travels"><span className="ti-linkedin"></span></a>
               </div>
             </div>
           </div>
@@ -64,9 +62,9 @@ export default function Footer() {
       </footer>
 
       {/* ScrolltoTop */}
-      <div id="totop" className="init">
+      <button id="totop" className="init" type="button" aria-label="Back to top" onClick={() => window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'})}>
         <span className="ti-angle-up"></span>
-      </div>
+      </button>
     </>
   )
 }

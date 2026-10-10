@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import LegacyContent from '@/components/LegacyContent'
 
 export default function JordanTours() {
   return (
@@ -131,6 +132,7 @@ export default function JordanTours() {
           </div>
         </div>
       </section>
+      <LegacyContent source="jordan" mode="main" />
       
       <Footer />
     </>

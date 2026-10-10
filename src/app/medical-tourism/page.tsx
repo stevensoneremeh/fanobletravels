@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import LegacyContent from '@/components/LegacyContent'
 
 export default function MedicalTourism() {
   return (
@@ -33,6 +34,7 @@ export default function MedicalTourism() {
           </div>
         </div>
       </section>
+      <LegacyContent source="medical" mode="main" />
       
       <Footer />
     </>

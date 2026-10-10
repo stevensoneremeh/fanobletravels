@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import LegacyContent from '@/components/LegacyContent'
 
 export default function ChinaFairs() {
   return (
@@ -29,6 +30,7 @@ export default function ChinaFairs() {
           </div>
         </div>
       </section>
+      <LegacyContent source="china" mode="main" />
       <Footer />
     </>
   )
