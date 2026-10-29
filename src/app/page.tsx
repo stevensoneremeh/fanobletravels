@@ -1,32 +1,3 @@
-import React from 'react'
-import Header from '@/components/Header'
-import HomeSlider from '@/components/HomeSlider'
-import SearchSection from '@/components/SearchSection'
-import Footer from '@/components/Footer'
-import LegacyContent from '@/components/LegacyContent'
-import HomeJourney from '@/components/HomeJourney'
-import MilestoneSection from '@/components/MilestoneSection'
-import './home-below-hero.css'
-
-export default function Home() {
-  return (
-    <>
-      <Header />
-      
-      {/* Home */}
-      <div id="home">
-        <HomeSlider />
-      </div>
-      
-      <HomeJourney />
-      <div className="journey-benefits">
-        <MilestoneSection />
-      </div>
-      <SearchSection />
-      <section className="home-legacy" aria-label="More from Fanoble">
-        <LegacyContent source="home" mode="home" />
-      </section>
-      <Footer />
-    </>
-  )
-}
+import Link from 'next/link'
+import { pilgrimage } from '@/data/travel'
+export default function Home(){return <main><section className="home-hero"><div className="shell"><span className="eyebrow" style={{color:'#e7b85e'}}>IATA accredited travel support</span><h1>Journeys, well considered.</h1><p>Pilgrimage, medical travel and trade fairs — thoughtfully planned from Lagos to the world.</p><div className="home-actions"><Link className="button" href="/contact">Plan my trip</Link><Link className="button button-ghost" href="#journeys">Explore journeys</Link></div></div></section><section className="home-intro shell"><span className="eyebrow">A trusted starting point</span><h2>Travel can feel expansive without feeling complicated.</h2><p>Fanoble Travels helps individuals, families, groups and professionals move forward with practical guidance, responsive support and space to make informed decisions.</p></section><section className="section tinted" id="journeys"><div className="shell"><span className="eyebrow">Choose your journey</span><h2>Three ways we help.</h2><div className="home-cards"><article><span className="eyebrow">01 / Pilgrimage</span><h3>Walk through places of meaning.</h3><p>Israel, Rome, Greece, Turkey, Egypt, Jordan and Fatima.</p><Link href="/tours/israel">Explore pilgrimage →</Link></article><article><span className="eyebrow">02 / Medical</span><h3>Care planning with calm.</h3><p>Coordinate questions, documents and travel details before you decide.</p><Link href="/medical-tourism">Explore medical travel →</Link></article><article><span className="eyebrow">03 / Trade fairs</span><h3>Make the trip count.</h3><p>Practical support for international business events and professional fairs.</p><Link href="/fairs/china">Explore fairs →</Link></article></div></div></section><section className="section shell"><span className="eyebrow">Popular pilgrimage routes</span><h2>Start with a destination.</h2><div className="country-grid">{pilgrimage.slice(0,6).map(d=><Link className="country-card" href={`/tours/${d.slug}`} key={d.slug}><span>{d.region}</span><h3>{d.name}</h3><p>{d.tagline}</p></Link>)}</div></section></main>}

@@ -1,0 +1,1 @@
+export default function Page(){return <main className="section shell"><span className="eyebrow">Fanoble Travels</span><h1>Privacy policy</h1><p>We use the information you share to respond to travel inquiries and provide requested support. We do not sell your personal information. Contact us to ask about access or correction.</p></main>}
