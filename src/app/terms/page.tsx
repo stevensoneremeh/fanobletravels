@@ -1,0 +1,1 @@
+export default function Page(){return <main className="section shell"><span className="eyebrow">Fanoble Travels</span><h1>Terms of service</h1><p>Information on this site is for planning conversations and does not constitute a medical recommendation, travel contract or booking confirmation. Details, availability and costs are confirmed before any commitment.</p></main>}
