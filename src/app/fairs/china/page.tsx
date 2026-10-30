@@ -1,13 +1,11 @@
 import React from 'react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import LegacyContent from '@/components/LegacyContent'
 
 export default function ChinaFairs() {
   return (
     <>
-      <Header />
-      <section id="subheader">
+<section id="subheader">
         <div className="container-fluid m-5-hor">
           <div className="row">
             <div className="col-md-12">
