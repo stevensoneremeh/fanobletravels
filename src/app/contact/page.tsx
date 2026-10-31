@@ -6,7 +6,7 @@ import ContactForm from '@/components/ContactForm'
 export default function Contact() {
   return (
     <>
-      <Header />
+      
       
       {/* Subheader */}
       <section id="subheader">
