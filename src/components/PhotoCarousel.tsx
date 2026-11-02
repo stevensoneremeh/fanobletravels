@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react'
 
 const slides = [
-  { src: '/img/bg-1.JPG', alt: 'Fanoble Travels heritage travel landscape' },
-  { src: '/img/bg-subheaderrome.JPG', alt: 'Historic Rome destination for pilgrimage travel' },
-  { src: '/img/bg-subheaderegypt.JPG', alt: 'Egyptian heritage and Nile travel experience' },
+  { src: '/images-slider/img-slide-1.jpg', alt: 'Horse riding travel experience from the Fanoble archive' },
+  { src: '/images-slider/img-slide-2.jpg', alt: 'Curated destination photography from the Fanoble archive' },
+  { src: '/images-slider/img-slide-3.jpg', alt: 'Pilgrimage travel landscape from the Fanoble archive' },
+  { src: '/images-slider/img-slide-11.jpg', alt: 'Thoughtful travel moment from the Fanoble archive' },
+  { src: '/img/gallery-home/big/img4.jpg', alt: 'Historic destination travel experience' },
   { src: '/img/bg-commerce.JPG', alt: 'International business travel and commerce' },
 ]
 
