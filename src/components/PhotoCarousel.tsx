@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react'
 
 const slides = [
+  { src: '/images-slider/img-slide-11.jpg', alt: 'Horse sculptures outside a landmark destination' },
   { src: '/images-slider/img-slide-1.jpg', alt: 'Aerial view of a destination coastline' },
   { src: '/images-slider/img-slide-2.jpg', alt: 'Pilgrims travelling through a historic destination' },
   { src: '/images-slider/img-slide-3.jpg', alt: 'Historic architecture and travel discovery' },
-  { src: '/img/gallery-home/big/img4.jpg', alt: 'Curated travel experience' },
 ]
 
 export default function PhotoCarousel() {
