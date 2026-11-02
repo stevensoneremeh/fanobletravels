@@ -8,7 +8,7 @@ export const pilgrimage: Destination[] = [
  {slug:'turkey',name:'Turkey',region:'Pilgrimage',tagline:'Where early Christian history meets wonder.',image:'/img/bg-subheaderturkeyreligioustours.jpg',sites:['Istanbul','Cappadocia','Early Christian sites'],description:'Travel with context, care and a clear plan.'},
  {slug:'egypt',name:'Egypt',region:'Pilgrimage',tagline:'Desert horizons and stories that endure.',image:'/img/bg-subheaderegypt.jpg',sites:['Cairo','Mount Sinai','St. Catherine’s Monastery'],description:'A calm, well-organised route through Egypt’s sacred landscape.'},
  {slug:'jordan',name:'Jordan',region:'Pilgrimage',tagline:'Prophetic landscapes and welcoming shores.',image:'/img/bg-subheader.jpg',sites:['The Dead Sea','Jordan River','Mount Nebo'],description:'Pair Jordan’s historic sites with practical travel support.'},
- {slug:'portugal',name:'Fatima, Portugal',region:'Pilgrimage',tagline:'A gentle journey to the Sanctuary of Our Lady of Fatima.',image:'/img/fatima-sanctuary.jpg',sites:['Sanctuary of Our Lady of Fatima','Fatima village','Lisbon extension'],description:'Plan a reflective pilgrimage to Fatima with guidance at every step.'},
+ {slug:'portugal',name:'Fatima, Portugal',region:'Pilgrimage',tagline:'A gentle journey to the Sanctuary of Our Lady of Fatima.',image:'/img/gallery-home/big/img3.jpg',sites:['Sanctuary of Our Lady of Fatima','Fatima village','Lisbon extension'],description:'Plan a reflective pilgrimage to Fatima with guidance at every step.'},
 ]
 export const medicalCountries = ['India','Israel','Turkey','Dubai','United Kingdom','United States','Cambodia','Europe']
 export const medicalSlugs = ['india','israel','turkey','dubai','uk','usa','cambodia','europe']

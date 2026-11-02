@@ -1,2 +1,2 @@
-import LegacyPage from '@/components/LegacyPage'
-export default function GreeceTours(){return <LegacyPage source="greece"/>}
+import { DestinationPage } from '@/components/DestinationPage'
+export default function GreecePage(){return <DestinationPage slug="greece" />}

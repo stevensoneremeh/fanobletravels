@@ -6,7 +6,7 @@ import LegacyContent from '@/components/LegacyContent'
 export default function ChinaFairs() {
   return (
     <>
-      <Header />
+      
       <section id="subheader">
         <div className="container-fluid m-5-hor">
           <div className="row">
